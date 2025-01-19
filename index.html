@@ -1,0 +1,571 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "barlow", sans-serif;
+            
+        }
+        body{
+            height: 100vh;
+            background-color: #192735;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .container{
+            width: 500px;
+            height: auto;
+            border-radius: 25px;
+            padding: 30px 20px;
+            box-shadow: 0 5px 10px rgba(255,255,255,0.3), 0 5px 10px #38f8b6;
+        }
+        h1{
+            color: #fff;
+            font-weight: 600;
+            padding: 15px 0;
+            text-align: center;
+
+        }
+        .input_div{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            padding-top: 2rem;
+        }
+        .input_div .child{
+            padding: 5px 15px;
+
+        }
+        input{
+            background-color: transparent;
+            color: #fff;
+            outline: none;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 20px 15px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        input::placeholder{
+        color: (255,255,255,0.3);
+        }
+        button{
+            display: block;
+            width: 150px;
+            padding: 15px 20px;
+            margin: 0 auto;
+            margin-top: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.2rem;
+            background-color: transparent;
+            border-radius: 25px;
+            color: #43ea87;
+            transition: width 0.6s, background-color 0.6s;
+            
+        }
+        button:hover{
+         width: 180px;
+         background-color: #43ea87;
+         color: #192735;
+
+        }
+        button:focus-visible{
+            border: 3px solid #43ea87;
+            outline: none;
+
+        }
+        .age{
+            display: block;
+            color: #fff;
+            margin: 20px 10px;
+            text-align: center;
+            font-size: 1.4rem;
+
+        }
+        .text-color{
+            color: #43ea87;
+            font-size: 1.5rem;
+
+        }
+        .text-danger{
+            color: orangered;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form >
+            <h1>Age Calculator</h1>
+            <div class="input_div">
+                <div class="child">
+                    <input type="text" 
+                    id="date" 
+                    placeholder="date" 
+                    required 
+                    minlength="1" 
+                    maxlength="2" 
+                    autocomplete="off">
+                </div>
+                <div class="child">
+                    <input type="text" 
+                    id="month" 
+                    placeholder="month" 
+                    required 
+                    minlength="1" 
+                    maxlength="2" 
+                    autocomplete="off">
+                </div>
+                <div class="child">
+                    <input type="text" 
+                    id="year" 
+                    placeholder="year" 
+                    required 
+                    minlength="1" 
+                    maxlength="4" 
+                    autocomplete="off">
+                </div>
+            </div>
+            <button type="button" onclick="getAge()">Submit</button>
+            <div class="age"></div>
+        </form>
+    </div>
+    <script>
+      function getAge(){
+        let date = document.getElementById("date").value;
+        let month = document.getElementById("month").value;
+        let year = document.getElementById("year").value;
+        if(date===""){
+            document.querySelector(".age").innerHTML =
+            "<span class='text-danger'> date con not be null </span>";
+            return;
+        }
+
+        else if(month===""){
+            document.querySelector(".age").innerHTML =
+            "<span class='text-danger'> month con not be null </span>";
+            return;
+        }
+
+        else if(year===""){
+            document.querySelector(".age").innerHTML =
+            "<span class='text-danger'> year con not be null </span>";
+            return;
+        }
+
+        let dt = new Date();
+        let currentDate = dt.getDate();
+        let currentMonth = dt.getMonth();
+        let currentYear = dt.getFullYear();
+        let monthDays=[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        if(date > currentDate){
+            currentMonth = currentDate + monthDays[currentMonth -1];
+            currentMonth = currentMonth -1;
+
+        }
+        if(month > currentMonth){
+            currentMonth = currentMonth + 12;
+            currentYear = currentYear -1;
+
+        }
+
+        let d = currentDate - date;
+        let m = currentMonth - month;
+        let y = currentYear = year;
+        document.querySelector(".age").innerHTML =
+        'your Age  is <span class="text-color">' +
+        y +
+        '</span> Year <span class="text-color">' +
+        d+
+        '</span> Days <span class="text-color">';
+
+
+      }
+
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Barlow", sans-serif;
+        }
+        body {
+            height: 100vh;
+            background-color: #192735;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .container {
+            width: 500px;
+            height: auto;
+            border-radius: 25px;
+            padding: 30px 20px;
+            box-shadow: 0 5px 10px rgba(255, 255, 255, 0.3), 0 5px 10px #38f8b6;
+        }
+        h1 {
+            color: #fff;
+            font-weight: 600;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .input_div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding-top: 2rem;
+        }
+        .input_div .child {
+            padding: 5px 15px;
+        }
+        input {
+            background-color: transparent;
+            color: #fff;
+            outline: none;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 20px 15px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        button {
+            display: block;
+            width: 150px;
+            padding: 15px 20px;
+            margin: 0 auto;
+            margin-top: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.2rem;
+            background-color: transparent;
+            border-radius: 25px;
+            color: #43ea87;
+            transition: width 0.6s, background-color 0.6s;
+        }
+        button:hover {
+            width: 180px;
+            background-color: #43ea87;
+            color: #192735;
+        }
+        button:focus-visible {
+            border: 3px solid #43ea87;
+            outline: none;
+        }
+        .age {
+            display: block;
+            color: #fff;
+            margin: 20px 10px;
+            text-align: center;
+            font-size: 1.4rem;
+        }
+        .text-color {
+            color: #43ea87;
+            font-size: 1.5rem;
+        }
+        .text-danger {
+            color: orangered;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h1>Age Calculator</h1>
+            <div class="input_div">
+                <div class="child">
+                    <input type="text" id="date" placeholder="date" required minlength="1" maxlength="2" autocomplete="off">
+                </div>
+                <div class="child">
+                    <input type="text" id="month" placeholder="month" required minlength="1" maxlength="2" autocomplete="off">
+                </div>
+                <div class="child">
+                    <input type="text" id="year" placeholder="year" required minlength="1" maxlength="4" autocomplete="off">
+                </div>
+            </div>
+            <button type="button" onclick="getAge()">Submit</button>
+            <div class="age"></div>
+        </form>
+    </div>
+    <script>
+        function getAge() {
+            let date = parseInt(document.getElementById("date").value);
+            let month = parseInt(document.getElementById("month").value);
+            let year = parseInt(document.getElementById("year").value);
+
+            if (isNaN(date) || isNaN(month) || isNaN(year)) {
+                document.querySelector(".age").innerHTML =
+                    "<span class='text-danger'>Please enter valid numbers for date, month, and year.</span>";
+                return;
+            }
+
+            let today = new Date();
+            let currentDate = today.getDate();
+            let currentMonth = today.getMonth() + 1; // Months are zero-based
+            let currentYear = today.getFullYear();
+
+            // Leap year adjustment
+            let monthDays = [31, (currentYear % 4 === 0 && (currentYear % 100 !== 0 || currentYear % 400 === 0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+            if (date > currentDate) {
+                currentDate += monthDays[currentMonth - 2];
+                currentMonth -= 1;
+            }
+
+            if (month > currentMonth) {
+                currentMonth += 12;
+                currentYear -= 1;
+            }
+
+            let d = currentDate - date;
+            let m = currentMonth - month;
+            let y = currentYear - year;
+
+            document.querySelector(".age").innerHTML =
+                'Your Age is <span class="text-color">' + y + '</span> Years, <span class="text-color">' + m + '</span> Months, and <span class="text-color">' + d + '</span> Days.';
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Barlow", sans-serif;
+        }
+        body {
+            height: 100vh;
+            background-color: #192735;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .container {
+            width: 500px;
+            height: auto;
+            border-radius: 25px;
+            padding: 30px 20px;
+            box-shadow: 0 5px 10px rgba(255, 255, 255, 0.3), 0 5px 10px #38f8b6;
+        }
+        h1 {
+            color: #fff;
+            font-weight: 600;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .input_div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding-top: 2rem;
+            gap: 10px;
+        }
+        .input_div .child {
+            padding: 5px 15px;
+        }
+        input {
+            background-color: transparent;
+            color: #fff;
+            outline: none;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 20px 15px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        button {
+            display: block;
+            width: 150px;
+            padding: 15px 20px;
+            margin: 0 auto;
+            margin-top: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.2rem;
+            background-color: transparent;
+            border-radius: 25px;
+            color: #43ea87;
+            transition: width 0.6s, background-color 0.6s;
+        }
+        button:hover {
+            width: 180px;
+            background-color: #43ea87;
+            color: #192735;
+        }
+        button:focus-visible {
+            border: 3px solid #43ea87;
+            outline: none;
+        }
+        .age {
+            display: block;
+            color: #fff;
+            margin: 20px 10px;
+            text-align: center;
+            font-size: 1.4rem;
+        }
+        .text-color {
+            color: #43ea87;
+            font-size: 1.5rem;
+        }
+        .text-danger {
+            color: orangered;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .input_div {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            .child {
+                padding: 5px 10px;
+            }
+            input {
+                font-size: 0.9rem;
+                padding: 15px 10px;
+            }
+            button {
+                width: 140px;
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .input_div {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            input {
+                font-size: 0.85rem;
+                padding: 10px 10px;
+            }
+            button {
+                width: 130px;
+                font-size: 0.8rem;
+            }
+            .age {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h1>Age Calculator</h1>
+            <div class="input_div">
+                <div class="child">
+                    <input type="text" id="date" placeholder="date" required minlength="1" maxlength="2" autocomplete="off">
+                </div>
+                <div class="child">
+                    <input type="text" id="month" placeholder="month" required minlength="1" maxlength="2" autocomplete="off">
+                </div>
+                <div class="child">
+                    <input type="text" id="year" placeholder="year" required minlength="1" maxlength="4" autocomplete="off">
+                </div>
+            </div>
+            <button type="button" onclick="getAge()">Submit</button>
+            <div class="age"></div>
+        </form>
+    </div>
+    <script>
+        function getAge() {
+            let date = parseInt(document.getElementById("date").value);
+            let month = parseInt(document.getElementById("month").value);
+            let year = parseInt(document.getElementById("year").value);
+
+            if (isNaN(date) || isNaN(month) || isNaN(year)) {
+                document.querySelector(".age").innerHTML =
+                    "<span class='text-danger'>Please enter valid numbers for date, month, and year.</span>";
+                return;
+            }
+
+            let today = new Date();
+            let currentDate = today.getDate();
+            let currentMonth = today.getMonth() + 1; // Months are zero-based
+            let currentYear = today.getFullYear();
+
+            // Leap year adjustment
+            let monthDays = [31, (currentYear % 4 === 0 && (currentYear % 100 !== 0 || currentYear % 400 === 0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+            if (date > currentDate) {
+                currentDate += monthDays[currentMonth - 2];
+                currentMonth -= 1;
+            }
+
+            if (month > currentMonth) {
+                currentMonth += 12;
+                currentYear -= 1;
+            }
+
+            let d = currentDate - date;
+            let m = currentMonth - month;
+            let y = currentYear - year;
+
+            document.querySelector(".age").innerHTML =
+                'Your Age is <span class="text-color">' + y + '</span> Years, <span class="text-color">' + m + '</span> Months, and <span class="text-color">' + d + '</span> Days.';
+        }
+    </script>
+</body>
+</html>
+
